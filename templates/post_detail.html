@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block  content %}
+
+
+<h2>{{object.titulo}} </h2>
+<p>{{object.descripcion}} </p>
+
+<a href ="{% url 'update' object.pk %}"><input type="submit" value="Actualizar"></a>
+
+{% endblock  %}
