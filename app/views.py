@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView,CreateView
+from django.views.generic.edit import DeleteView
+
+from django.urls import reverse_lazy
+
 from .models import Publicaciones
 
 
@@ -14,14 +18,23 @@ class HomePageView(ListView):
 class DetailPageView(DetailView):
     template_name = "post_detail.html"
     model =Publicaciones
+    success_url = reverse_lazy("home") 
 
-class UpdtePageview(UpdateView):
+class UpdatePageview(UpdateView):
     template_name= "post_update.html"
     model = Publicaciones
     fields =["titulo", "descripcion"]
+    success_url = reverse_lazy("home") 
 
 class CreatePageView(CreateView):
      template_name= "post_create.html"
      model = Publicaciones
      fields = ["titulo", "descripcion"]
+     success_url = reverse_lazy("home") 
+
+class DeletePageView(DeleteView):
+     template_name= "post_delete.html"
+     model = Publicaciones
+     fields = ["titulo", "descripcion"]
+     success_url = reverse_lazy("home") 
    

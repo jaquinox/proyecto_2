@@ -7,5 +7,6 @@
 <p>{{object.descripcion}} </p>
 
 <a href ="{% url 'update' object.pk %}"><input type="submit" value="Actualizar"></a>
+<a href ="{% url 'delete' object.pk %}"><input type="submit" value="Borrar"></a>
 
 {% endblock  %}
