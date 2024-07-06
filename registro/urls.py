@@ -1,8 +1,11 @@
-from django.urls import path, include    
+from django.urls import path, include   
+from .views import SignupView,FirstPage 
 
 
-urlspatterns=[
+urlpatterns =[
 
-    path("", include ('django.contrib.auth') )
+    path("account", include ('django.contrib.auth.urls') ),
+    path("signup", SignupView.as_view(), name="signup" ),
+    path("", FirstPage.as_view(), name="first_page" ),
 
 ]

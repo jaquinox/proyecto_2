@@ -17,9 +17,16 @@
     </head>
     <body>
   <a href="{% url 'home' %}"> <input type="submit" value="go back"> </a>
+
+  {% if user.is_authenticated %}
+
 {% block content %}
 
 {% endblock  %}
+
+{% endif %}
+
+
 
 
         
