@@ -17,3 +17,7 @@ class SignupView(CreateView):
 class FirstPage(TemplateView):
     
     template_name = "registration/first_page.html"
+
+
+class LogoutPage (TemplateView):
+    template_name = "registration/logout.html"
